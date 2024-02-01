@@ -1,5 +1,5 @@
 run: cpp
-	 valgrind ./cpp 
+	./cpp 
 
 cpp: cpp.o
 	g++ -o cpp cpp.o -Wall -Wextra -Wpedantic
