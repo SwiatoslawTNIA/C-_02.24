@@ -20,9 +20,10 @@ vpath %.h headers
 run: c++
 	./c++
 #Linking:
-c++: c++.o stock.o
+c++: c++.o stock.o stack.o
 #Compiling:
 stock.o:c++.h
+stack.o:stack.h
 c++.o:c++.h
 #The compiler while compiling the file above needs to know about the existence of implementations
 #in the file stock10.o, so we have to include it in the c++.c file

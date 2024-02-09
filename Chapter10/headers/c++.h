@@ -1,7 +1,7 @@
 #ifndef STOCK_
 #define STOCK_
 #include <iostream>
-
+#include <cctype>
 class Stock
 {
 private:
@@ -14,14 +14,16 @@ private:
 public:
   //constructors:(func overloading)
   Stock(const std::string & co, long n = 0, double pr = 0.0);
-  Stock(void);
+  Stock(void);// a default constructor
   //destructors:
   ~Stock(void);
+  const Stock & topval(const Stock & stock1) const;
+
   //public functions:
   // void acquire(const std::string & co, long n, double pr);
   void sell(long num, double price);
   void update(double price);
   void buy(long num, double price);
-  void show(void) const;
+  void show(void) const;//show promises not to change the object it refers to
 };//semicolon at the end
 #endif
