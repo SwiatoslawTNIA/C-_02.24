@@ -42,7 +42,7 @@ void Time::Reset(int h, int m)
   minutes = m;
 }
 
-Time Time::Sum(const Time & t) const
+Time Time::operator+(const Time & t) const
 {
   //create a new Time obj, assigning it the sum of the curr values + the t arg passed as an arg:
   Time new_obj;
@@ -54,7 +54,36 @@ Time Time::Sum(const Time & t) const
 
 void Time::Show(void) const
 {
+  std::cout.precision(3);
   std::cout << "\nThe current time: " << hours << ":" << minutes << std::endl;
+}
+
+Time Time::operator-(const Time & t) const
+{
+  Time new_time;
+  int t1 = 0, t2 = 0;
+  t1 = t.minutes + t.hours * 60;
+  t2 = minutes + hours * 60;
+  new_time.hours = +((t1 - t2) / 60);
+  new_time.minutes = +((t1 - t2) % 60);
+  return new_time;
+}
+Time operator*(const double num, Time & t)
+{
+  Time return_time;
+  unsigned long int total_m = t.minutes * num + t.hours * 60 * num;
+  return_time.hours = total_m / 60;
+  return_time.minutes = total_m % 60;
+  return return_time;
+}
+//trying to teach the Time object to use the cout: cout << Time, 
+//the operator<< overloading cannot be a Time member func, because then we would have to use Time << cout
+//so it must be a friend func:
+std::ostream & operator<<(std::ostream  & out,const Time & t)//peform an operator overloading for the exp: cout << t
+//where cout is an object of ostream class, that belongs to std namespace
+{
+  out << "\nHours:" << t.hours << ", minutes: " << t.minutes;
+  return out;
 }
 
 

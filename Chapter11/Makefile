@@ -20,7 +20,11 @@ vpath %.h headers
 run: c++
 	./c++
 
-c++:c++.o time.o
+.INTERMEDIATE: %.o
+
+c++:c++.o time.o vector.o stone.o
+stone.o:stone.h
+vector.o:vector.h
 time.o:timing.h
 c++.o:c++.h
 
