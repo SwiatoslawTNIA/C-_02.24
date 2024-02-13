@@ -145,7 +145,12 @@ namespace VECTOR
       os << "Vector object mode is invalid";
     return os;
   }
+  
 }
 
+VECTOR::Vector::operator double(void) const // the funct is form the VECTOR namespace, belongs to the VECTOR class
+{
+  return (double)mag;
+}
 
 

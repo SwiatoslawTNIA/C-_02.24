@@ -1,3 +1,14 @@
+//---------------------------------------------------------------------------------------------------------------------
+// c++.cc
+//
+// <Explanation of the program ...>
+// <... May have multiple lines.>
+//
+// Group: <group name>
+//
+// Author: <student ID>
+//---------------------------------------------------------------------------------------------------------------------
+//
 #include "c++.h"
 #include "time.cc"
 #include "timing.h"
@@ -10,6 +21,8 @@
 #include <random>
 #include "stone.h"
 #include "stone.cc"
+#include "complex0.h"
+#include "complex0.cc"
 typedef int INT;
 typedef int INT;
 typedef int INT;
@@ -92,20 +105,63 @@ int main(void)
   // cin.clear();
   // while(cin.get() != '\n')
   //   continue;
-  using namespace STONEWT;
-  Stonewt new_stone;
-  new_stone = Stonewt(19.8);
+  // {
+  //   using namespace VECTOR;
 
-  new_stone.show_lbs();
-  new_stone.show_stn();
-  //test the implicit conversion:
-  Stonewt st_1 = Stonewt(9, 34.3);
-  //implicit conversion:
-  double pounds = st_1;
-  printf("The pounds: %.3lf", pounds);
+  //   Vector new_vector;
+  //   double res = new_vector;
+  //   printf("The new_vector res: %lf", res);
+  // }
+  // using namespace STONEWT;
+  // Stonewt new_stone;
+  // new_stone = Stonewt(14.3);//the destructor comes before the 
+  // // new_stone = Stonewt(19.8);
+  //there were some other types to type into, including the main part, where everything was set up
+
+
+  // new_stone.show_lbs();
+  // // new_stone.show_stn();
+  // //test the implicit conversion:
+  // Stonewt st_1 = Stonewt(9, 34.3);
+  // //implicit conversion:
+  // double pounds = st_1;
+  // printf("The pounds: %.3lf", pounds);
+  // //conversion of Stonewt to double:
+  // double value = new_stone;
+  // int val_2 = new_stone;
+  // printf("\nThe values of the conversion: %lf - double, %d - val_2", value, val_2);
+  // Stonewt st_2(34.234);//create a new st_1 obj
+  // // Stonewt st_3 = -1.1;//impossible, the Stonewt constructor doesn't do any implicit conversion.
+  // //testing the multiplication:
+  // Stonewt m_1(4324.23), m_2;
+  // Stonewt res = m_1 * 2.0;  
+  // res.show_lbs();
+  
+  //it is also possible, even though we have explicit
+
+  complex a(3.0, 4.0);
+// initialize to (3,4i)
+  complex c;
+  cout << "Enter a complex number (q to quit):\n";
+  while 
+  
+  (cin >> c)
+  {
+    cout << "c is " << c << "\n";
+    cout << "complex conjugate is " << ~c << "\n";
+    cout << "a is " << a << '\n';
+    cout << "a + c is " << a + c << "\n";
+    cout << "a - c is " << a - c << "\n";
+    cout << "a * c is " << a * c << "\n";
+    cout << "2 * c is " << 2 * c << '\n';
+    
+    cout << "Enter a complex number (q to quit):\n";
+  }
+  cout << "Done!\n";
   return 0;
-
 }
+
+
 inline int count(int x)
 {
   return x*x;

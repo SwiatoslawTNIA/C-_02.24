@@ -36,3 +36,5 @@ depend: c++.cc
 .PHONY:clean
 clean:
 	rm -rf *.o c++
+
+
